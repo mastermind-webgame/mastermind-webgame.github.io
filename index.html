@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+</head>
+<body onload="startGame()">
+
+<!-- Big border -->
+<div class="big_border" style="position: absolute; left: 435px; top: 0px;">
+</div>
+
+<!-- Game name -->
+<div class="game_name" style="position: absolute; left: 544.5px; top: -35px">
+    <h3>Mastermind</h3>
+</div>
+
+<!-- Correct circles -->
+<div class="correct_circles" style="position: absolute; left: 525px; top: 40px;">
+</div>
+
+<div style="position: absolute; left: 530px; top: 45px;">
+    <button class="correct_circle" id="correct_circle0"></button>
+</div>
+<div style="position: absolute; left: 600px; top: 45px;">
+    <button class="correct_circle" id="correct_circle1"></button>
+</div>
+<div style="position: absolute; left: 670px; top: 45px;">
+    <button class="correct_circle" id="correct_circle2"></button>
+</div>
+<div style="position: absolute; left: 740px; top: 45px;">
+    <button class="correct_circle" id="correct_circle3"></button>
+</div>
+
+<!-- Try 9 -->
+<div class="peg" id="try9peg0" style="position: absolute; left: 445px; top: 115px;">
+</div>
+<div class="peg" id="try9peg1" style="position: absolute; left: 470px; top: 115px;">
+</div>
+<div class="peg" id="try9peg2" style="position: absolute; left: 445px; top: 140px;">
+</div>
+<div class="peg" id="try9peg3" style="position: absolute; left: 470px; top: 140px;">
+</div>
+
+<div style="position: absolute; left: 530px; top: 110px;">
+    <button class="try_circle" id="try9circle0" onclick="circ0()" disabled></button>
+</div>
+<div style="position: absolute; left: 600px; top: 110px;">
+    <button class="try_circle" id="try9circle1" onclick="circ1()" disabled></button>
+</div>
+<div style="position: absolute; left: 670px; top: 110px;">
+    <button class="try_circle" id="try9circle2" onclick="circ2()" disabled></button>
+</div>
+<div style="position: absolute; left: 740px; top: 110px;">
+    <button class="try_circle" id="try9circle3" onclick="circ3()" disabled></button>
+</div>
+
+<!-- Try 8 -->
+<div class="peg" id="try8peg0" style="position: absolute; left: 445px; top: 170px;">
+</div>
+<div class="peg" id="try8peg1" style="position: absolute; left: 470px; top: 170px;">
+</div>
+<div class="peg" id="try8peg2" style="position: absolute; left: 445px; top: 195px;">
+</div>
+<div class="peg" id="try8peg3" style="position: absolute; left: 470px; top: 195px;">
+</div>
+
+<div style="position: absolute; left: 530px; top: 165px;">
+    <button class="try_circle" id="try8circle0" onclick="circ0()" disabled></button>
+</div>
+<div style="position: absolute; left: 600px; top: 165px;">
+    <button class="try_circle" id="try8circle1" onclick="circ1()" disabled></button>
+</div>
+<div style="position: absolute; left: 670px; top: 165px;">
+    <button class="try_circle" id="try8circle2" onclick="circ2()" disabled></button>
+</div>
+<div style="position: absolute; left: 740px; top: 165px;">
+    <button class="try_circle" id="try8circle3" onclick="circ3()" disabled></button>
+</div>
+
+<!-- Try 7 -->
+<div class="peg" id="try7peg0" style="position: absolute; left: 445px; top: 225px;">
+</div>
+<div class="peg" id="try7peg1" style="position: absolute; left: 470px; top: 225px;">
+</div>
+<div class="peg" id="try7peg2" style="position: absolute; left: 445px; top: 250px;">
+</div>
+<div class="peg" id="try7peg3" style="position: absolute; left: 470px; top: 250px;">
+</div>
+
+<div style="position: absolute; left: 530px; top: 220px;">
+    <button class="try_circle" id="try7circle0" onclick="circ0()" disabled></button>
+</div>
+<div style="position: absolute; left: 600px; top: 220px;">
+    <button class="try_circle" id="try7circle1" onclick="circ1()" disabled></button>
+</div>
+<div style="position: absolute; left: 670px; top: 220px;">
+    <button class="try_circle" id="try7circle2" onclick="circ2()" disabled></button>
+</div>
+<div style="position: absolute; left: 740px; top: 220px;">
+    <button class="try_circle" id="try7circle3" onclick="circ3()" disabled></button>
+</div>
+
+<!-- Try 6 -->
+<div class="peg" id="try6peg0" style="position: absolute; left: 445px; top: 280px;">
+</div>
+<div class="peg" id="try6peg1" style="position: absolute; left: 470px; top: 280px;">
+</div>
+<div class="peg" id="try6peg2" style="position: absolute; left: 445px; top: 305px;">
+</div>
+<div class="peg" id="try6peg3" style="position: absolute; left: 470px; top: 305px;">
+</div>
+
+<div style="position: absolute; left: 530px; top: 275px;">
+    <button class="try_circle" id="try6circle0" onclick="circ0()" disabled></button>
+</div>
+<div style="position: absolute; left: 600px; top: 275px;">
+    <button class="try_circle" id="try6circle1" onclick="circ1()" disabled></button>
+</div>
+<div style="position: absolute; left: 670px; top: 275px;">
+    <button class="try_circle" id="try6circle2" onclick="circ2()" disabled></button>
+</div>
+<div style="position: absolute; left: 740px; top: 275px;">
+    <button class="try_circle" id="try6circle3" onclick="circ3()" disabled></button>
+</div>
+
+<!-- Try 5 -->
+<div class="peg" id="try5peg0" style="position: absolute; left: 445px; top: 335px;">
+</div>
+<div class="peg" id="try5peg1" style="position: absolute; left: 470px; top: 335px;">
+</div>
+<div class="peg" id="try5peg2" style="position: absolute; left: 445px; top: 360px;">
+</div>
+<div class="peg" id="try5peg3" style="position: absolute; left: 470px; top: 360px;">
+</div>
+
+<div style="position: absolute; left: 530px; top: 330px;">
+    <button class="try_circle" id="try5circle0" onclick="circ0()" disabled></button>
+</div>
+<div style="position: absolute; left: 600px; top: 330px;">
+    <button class="try_circle" id="try5circle1" onclick="circ1()" disabled></button>
+</div>
+<div style="position: absolute; left: 670px; top: 330px;">
+    <button class="try_circle" id="try5circle2" onclick="circ2()" disabled></button>
+</div>
+<div style="position: absolute; left: 740px; top: 330px;">
+    <button class="try_circle" id="try5circle3" onclick="circ3()" disabled></button>
+</div>
+
+<!-- Try 4 -->
+<div class="peg" id="try4peg0" style="position: absolute; left: 445px; top: 390px;">
+</div>
+<div class="peg" id="try4peg1" style="position: absolute; left: 470px; top: 390px;">
+</div>
+<div class="peg" id="try4peg2" style="position: absolute; left: 445px; top: 415px;">
+</div>
+<div class="peg" id="try4peg3" style="position: absolute; left: 470px; top: 415px;">
+</div>
+
+<div style="position: absolute; left: 530px; top: 385px;">
+    <button class="try_circle" id="try4circle0" onclick="circ0()" disabled></button>
+</div>
+<div style="position: absolute; left: 600px; top: 385px;">
+    <button class="try_circle" id="try4circle1" onclick="circ1()" disabled></button>
+</div>
+<div style="position: absolute; left: 670px; top: 385px;">
+    <button class="try_circle" id="try4circle2" onclick="circ2()" disabled></button>
+</div>
+<div style="position: absolute; left: 740px; top: 385px;">
+    <button class="try_circle" id="try4circle3" onclick="circ3()" disabled></button>
+</div>
+
+<!-- Try 3 -->
+<div class="peg" id="try3peg0" style="position: absolute; left: 445px; top: 445px;">
+</div>
+<div class="peg" id="try3peg1" style="position: absolute; left: 470px; top: 445px;">
+</div>
+<div class="peg" id="try3peg2" style="position: absolute; left: 445px; top: 470px;">
+</div>
+<div class="peg" id="try3peg3" style="position: absolute; left: 470px; top: 470px;">
+</div>
+
+<div style="position: absolute; left: 530px; top: 440px;">
+    <button class="try_circle" id="try3circle0" onclick="circ0()" disabled></button>
+</div>
+<div style="position: absolute; left: 600px; top: 440px;">
+    <button class="try_circle" id="try3circle1" onclick="circ1()" disabled></button>
+</div>
+<div style="position: absolute; left: 670px; top: 440px;">
+    <button class="try_circle" id="try3circle2" onclick="circ2()" disabled></button>
+</div>
+<div style="position: absolute; left: 740px; top: 440px;">
+    <button class="try_circle" id="try3circle3" onclick="circ3()" disabled></button>
+</div>
+
+<!-- Try 2 -->
+<div class="peg" id="try2peg0" style="position: absolute; left: 445px; top: 500px;">
+</div>
+<div class="peg" id="try2peg1" style="position: absolute; left: 470px; top: 500px;">
+</div>
+<div class="peg" id="try2peg2" style="position: absolute; left: 445px; top: 525px;">
+</div>
+<div class="peg" id="try2peg3" style="position: absolute; left: 470px; top: 525px;">
+</div>
+
+<div style="position: absolute; left: 530px; top: 495px;">
+    <button class="try_circle" id="try2circle0" onclick="circ0()" disabled></button>
+</div>
+<div style="position: absolute; left: 600px; top: 495px;">
+    <button class="try_circle" id="try2circle1" onclick="circ1()" disabled></button>
+</div>
+<div style="position: absolute; left: 670px; top: 495px;">
+    <button class="try_circle" id="try2circle2" onclick="circ2()" disabled></button>
+</div>
+<div style="position: absolute; left: 740px; top: 495px;">
+    <button class="try_circle" id="try2circle3" onclick="circ3()" disabled></button>
+</div>
+
+<!-- Try 1 -->
+<div class="peg" id="try1peg0" style="position: absolute; left: 445px; top: 555px;">
+</div>
+<div class="peg" id="try1peg1" style="position: absolute; left: 470px; top: 555px;">
+</div>
+<div class="peg" id="try1peg2" style="position: absolute; left: 445px; top: 580px;">
+</div>
+<div class="peg" id="try1peg3" style="position: absolute; left: 470px; top: 580px;">
+</div>
+
+<div style="position: absolute; left: 530px; top: 550px;">
+    <button class="try_circle" id="try1circle0" onclick="circ0()" disabled></button>
+</div>
+<div style="position: absolute; left: 600px; top: 550px;">
+    <button class="try_circle" id="try1circle1" onclick="circ1()" disabled></button>
+</div>
+<div style="position: absolute; left: 670px; top: 550px;">
+    <button class="try_circle" id="try1circle2" onclick="circ2()" disabled></button>
+</div>
+<div style="position: absolute; left: 740px; top: 550px;">
+    <button class="try_circle" id="try1circle3" onclick="circ3()" disabled></button>
+</div>
+
+<!-- Try 0 -->
+<div class="peg" id="try0peg0" style="position: absolute; left: 445px; top: 610px;">
+</div>
+<div class="peg" id="try0peg1" style="position: absolute; left: 470px; top: 610px;">
+</div>
+<div class="peg" id="try0peg2" style="position: absolute; left: 445px; top: 635px;">
+</div>
+<div class="peg" id="try0peg3" style="position: absolute; left: 470px; top: 635px;">
+</div>
+
+<div style="position: absolute; left: 530px; top: 605px;">
+    <button class="try_circle" id="try0circle0" onclick="circ0()" disabled></button>
+</div>
+<div style="position: absolute; left: 600px; top: 605px;">
+    <button class="try_circle" id="try0circle1" onclick="circ1()" disabled></button>
+</div>
+<div style="position: absolute; left: 670px; top: 605px;">
+    <button class="try_circle" id="try0circle2" onclick="circ2()" disabled></button>
+</div>
+<div style="position: absolute; left: 740px; top: 605px;">
+    <button class="try_circle" id="try0circle3" onclick="circ3()" disabled></button>
+</div>
+
+<!-- Colour selection and submission -->
+<div class="colour_selection_border" style="position: fixed; left: 940px; top: 210px;">
+</div>
+
+<div style="position: fixed; left: 950px; top: 220px;">
+    <button class="red" id="red" onclick="red()"></button>
+</div>
+<div style="position: fixed; left: 1020px; top: 220px;">
+    <button class="blue" id="blue" onclick="blue()"></button>
+</div>
+<div style="position: fixed; left: 1090px; top: 220px;">
+    <button class="white" id="white" onclick="white()"></button>
+</div>
+<div style="position: fixed; left: 950px; top: 290px;">
+    <button class="green" id="green" onclick="green()"></button>
+</div>
+<div style="position: fixed; left: 1020px; top: 290px;">
+    <button class="black" id="black" onclick="black()"></button>
+</div>
+<div style="position: fixed; left: 1090px; top: 290px;">
+    <button class="yellow" id="yellow" onclick="yellow()"></button>
+</div>
+<div style="position: fixed; left: 950px; top: 360px;">
+    <button class="submit" id="submit" onclick="submit()" disabled>SUBMIT</button>
+</div>
+
+<canvas id="canvas" width="1260" height="642"></canvas>
+<!-- style="border:1px solid #d3d3d3;" -->
+
+<div style="position: absolute; left: 140px; top: 615px">
+    <a href="https://www.paypal.com/donate/?hosted_button_id=8ACT42KK4VZJE">
+        <img src="PayPal Button.png" style="width:145px">
+    </a>
+</div>
+
+</body>
+</html>

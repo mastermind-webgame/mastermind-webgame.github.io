@@ -1,0 +1,110 @@
+body {
+  background-color: #ffcc99;
+}
+
+.big_border {
+  height: 660px;
+  width: 370px;
+  border: 2px solid black;
+  border-radius: 10px;
+}
+
+.game_name {
+  font-family: "Alegreya Sans SC", serif;
+  font-size: 30px;
+}
+
+.correct_circles {
+  height: 60px;
+  width: 270px;
+  border: 2px solid black;
+  border-radius: 10px;
+}
+
+.correct_circle {
+  background-color: #ffcc99;
+  border: 2px solid black;
+  border-radius: 50%;
+  padding: 23px;
+}
+
+.peg {
+  height: 15px;
+  width: 15px;
+  background-color: #ffcc99;
+  border: 2px solid black;
+  border-radius: 50%;
+}
+
+.try_circle {
+  background-color: #ffcc99;
+  border: 2px solid black;
+  border-radius: 50%;
+  padding: 23px;
+}
+
+.colour_selection_border {
+  height: 230px;
+  width: 210px;
+  border: 2px solid black;
+  border-radius: 10px;
+}
+
+.red {
+  background-color: red;
+  border: 2px solid black;
+  border-radius: 50%;
+  padding: 23px;
+  cursor: pointer;
+}
+
+.blue {
+  background-color: blue;
+  border: 2px solid black;
+  border-radius: 50%;
+  padding: 23px;
+  cursor: pointer;
+}
+
+.white {
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 50%;
+  padding: 23px;
+  cursor: pointer;
+}
+
+.green {
+  background-color: green;
+  border: 2px solid black;
+  border-radius: 50%;
+  padding: 23px;
+  cursor: pointer;
+}
+
+.black {
+  background-color: black;
+  border: 2px solid black;
+  border-radius: 50%;
+  padding: 23px;
+  cursor: pointer;
+}
+
+.yellow {
+  background-color: yellow;
+  border: 2px solid black;
+  border-radius: 50%;
+  padding: 23px;
+  cursor: pointer;
+}
+
+.submit {
+  background-color: purple;
+  border: none;
+  color: white;
+  border-radius: 10%;
+  font-size: 20px;
+  padding: 23px;
+  cursor: not-allowed;
+  width: 195px;
+}
